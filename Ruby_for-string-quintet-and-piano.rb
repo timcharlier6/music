@@ -97,10 +97,10 @@ define :second_violoncelle do |partition_violoncelle2|
   end
 end
 
-define :piano do |partition_piano|
+define :contrebasse do |partition_contrebasse|
   in_thread do 
     use_synth :piano
-    partition_piano.each do |note|
+    partition_contrebasse.each do |note|
       sleep 2
       play note, amp: 0.9, decay: 1, sustain: 1, release: 2
       sleep 4
@@ -114,7 +114,7 @@ partition_violon2 = [:db5, :f5, :eb5, :gb5, :f5, :ab5, :gb5, :eb5, :db5, :f5, :a
 partition_alto = [:bb4, :ab4, :gb4, :bb4, :bb4, :cb5, :bb4, :gb4, :gb4,:bb4, :cb5, :db5, :bb4, :ab4, :bb4]
 partition_violoncelle1 = [[:bb3, :ab3], [:ab3, :gb3], [:gb3, :gb3], [:bb3, :bb3], [:db4, :cb4], [:cb4, :bb3], [:bb3, :ab3], [:gb3, :gb3], [:bb3,:bb3], [:db4, :cb4], [:cb4, :bb3], [:bb3, :ab3], [:gb3, :f3], [:f3, :f3], [:bb3,:bb3], [:bb3,:bb3], [:bb3,:bb3], [:bb3,:bb3], [:bb3,:bb3]]
 partition_violoncelle2 = [[:gb2, :gb2], [:f2, :f2], [:eb2, :eb2], [:gb2, :gb2], [:bb2, :bb2], [:ab2, :ab2], [:gb2, :f2], [:eb2, :eb2], [:gb2, :gb2], [:bb2, :bb2], [:ab2, :ab2], [:gb2, :f2], [:eb2, :eb2], [:db2, :db2], [:gb2, :gb2],[:gb2, :gb2],[:gb2, :gb2],[:gb2, :gb2],[:gb2, :gb2]]
-partition_piano = [[:gb1, :gb0], [:f1, :f0], [:eb1, :eb0], [:gb1, :gb0], [:bb1, :bb0], [:ab1, :ab0], [:gb1, :gb0], [:eb1, :eb0], [:gb1, :gb0], [:bb1, :bb0], [:ab1, :ab0], [:gb1, :gb0], [:eb1, :eb0], [:db1, :db0], [:gb1, :gb0],[:gb1, :gb0], [:gb1, :gb0], [:gb1, :gb0], [:gb1, :gb0]]
+partition_contrebasse = [[:gb1, :gb0], [:f1, :f0], [:eb1, :eb0], [:gb1, :gb0], [:bb1, :bb0], [:ab1, :ab0], [:gb1, :gb0], [:eb1, :eb0], [:gb1, :gb0], [:bb1, :bb0], [:ab1, :ab0], [:gb1, :gb0], [:eb1, :eb0], [:db1, :db0], [:gb1, :gb0],[:gb1, :gb0], [:gb1, :gb0], [:gb1, :gb0], [:gb1, :gb0]]
 
 with_fx :reverb, mix: 0.4, room: 1 do
   
@@ -130,7 +130,7 @@ with_fx :reverb, mix: 0.4, room: 1 do
   
   second_violoncelle partition_violoncelle2
   
-  piano partition_piano
+  contrebasse partition_contrebasse
   
 end
 

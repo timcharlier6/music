@@ -11,13 +11,14 @@ gamme = {
 }
 
 registre = {
+  7 => "soprano",
   6 => "violon1",  
   5 => "violon2",
   4 => "alto",
   3 => "violoncelle1",
   2 => "violoncelle2",
-  1 => "contrebasse",
-  0 => "sub"
+  1 => "contrebasse"
+
 }
 
 define :chanteur do |partition_voix|
